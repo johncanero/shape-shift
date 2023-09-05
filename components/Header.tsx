@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-
+import { Input } from "@/components/ui/input"
 
 const Header = () => {
     return ( 
@@ -29,8 +29,79 @@ const Header = () => {
                     </CardHeader>
 
                     <CardContent>
+                        <form
+                            className='mb-6 space-y-4 '
+                            onSubmit={() => {}}
+                        >   
+                            {/* Metric & Label */}
+                            <div className='flex flex-row gap-4 justify-self-center'>
+                                <label
+                                    htmlFor='metric'
+                                    className='flex items-center flex-1 gap-4 font-semibold'
+                                >
+                                    <input
+                                        className='w-5 h-5'
+                                        type='radio'
+                                        id='metric'
+                                        value='metric'
+                                        // checked={value === 'metric'}
+                                        onChange={() => {}}
+                                    />
+                                    Metric
+                                </label>
+                                
+                                <label
+                                    htmlFor='imperial'
+                                    className='flex items-center flex-1 gap-4 font-semibold'
+                                >
+                                    <input
+                                        className='w-5 h-5'
+                                        type='radio'
+                                        id='imperial'
+                                        value='imperial'
+                                        // checked={value === 'imperial'}
+                                        onChange={() => { }}
+                                    />
+                                    Imperial
+                                </label>
+                            </div>
+                            
+                            {/* Height and Weight */}
+                            <div className='md:flex md:flex-row md:gap-4 md:w-full'>
+                                <label
+                                    htmlFor='height'
+                                    className='flex flex-col w-full text-sm text-gray-500'
+                                >
+                                    Height
+                                    <input
+                                        placeholder='cm'
+                                        type='number'
+                                        className='px-4 py-2 text-lg font-semibold text-gray-900 border border-gray-300 rounded-md placeholder:text-right placeholder:text-blue-700/50 placeholder:font-semibold placeholder:-mr-2'
+                                        id='height'
+                                        // value={measures.height !== undefined ? measures.height : ''}
+                                        onChange={() => { }}
+                                    />
+                                </label>
+
+                                <label
+                                    htmlFor='weight'
+                                    className='flex flex-col w-full text-sm text-gray-500'
+                                >
+                                    Weight
+                                    <input
+                                        placeholder='kg'
+                                        type='number'
+                                        id='weight'
+                                        name='weight'
+                                        className='px-4 py-2 text-lg font-semibold text-gray-900 border border-gray-300 rounded-md placeholder:text-right placeholder:text-blue-700/50 placeholder:font-semibold placeholder:-mr-2'
+                                        // value={measures.weight !== undefined ? measures.weight : ''}
+                                        onChange={() => { }}
+                                    />
+                                </label>
+                            </div>
 
 
+                        </form>
                     </CardContent>
                 </Card>
             </div>
