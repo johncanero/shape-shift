@@ -4,23 +4,79 @@ import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from "@/components/ui/input"
 
+type Measures = {
+    height?: number
+    weight?: number
+}
+
+const INITIAL_STATE: Measures = {
+    height: undefined,
+    weight: undefined
+}
+
 const Header = () => {
+    const [value, setValue] = React.useState('metric')
+    const [measures, setMeasures] = React.useState<Measures>(INITIAL_STATE)
     const [bmi, setBMI] = React.useState<number | undefined>(undefined)
+
+    // calculateBMI
+    const calculateBMI = (weight?: number, height?: number) => {
+        if (!height || !weight) {
+            setBMI(undefined)
+            return
+        }
+
+        if (value === 'metric') {
+            let heightInMeters = height / 100
+            if (isNaN(heightInMeters)) {
+                setBMI(undefined)
+            } else {
+                setBMI(weight / (heightInMeters * heightInMeters))
+            }
+        } else {
+            let heightInInches = height * 12
+            if (isNaN(heightInInches)) {
+                setBMI(undefined)
+            } else {
+                setBMI((weight / (heightInInches * heightInInches)) * 703)
+            }
+        }
+    }
+
+    // calculateIdealWeightRange
+    function calculateIdealWeightRange(height?: number): [string, string] {
+        let lowerRange
+        let upperRange
+        if (value === 'metric') {
+            let heightInMeters = height! / 100
+            lowerRange = 18.5 * (heightInMeters * heightInMeters)
+            upperRange = 24.9 * (heightInMeters * heightInMeters)
+        } else {
+            let heightInInches = height! * 12
+            lowerRange = 18.5 * (heightInInches * heightInInches)
+            upperRange = 24.9 * (heightInInches * heightInInches)
+        }
+        return [lowerRange.toFixed(2), upperRange.toFixed(2)]
+    }
 
     return (
         <div>
-            <div className='flex flex-col py-2 mb-10 md:flex-row md:items-center'>
+            <div className='flex flex-col py-2 mb-10 lg:flex-row md:items-center'>
                 {/* Body Mass Index Calculator */}
-                <div className='flex-1 gap-4 mr-12 md:text-left md:flex md:flex-col'>
+                <div className='flex-1 gap-4 md:mx-12 lg:mx-0 lg:mr-16 md:text-left lg:flex md:flex-col'>
                     <h1 className='text-5xl font-bold tracking-tighter text-center md:text-left'>
                         Body Mass <br /> Index Calculator
                     </h1>
-                    <p className='text-center text-gray-600 md:text-left'>
-                        Better understand your weight in relation to your height using our
-                        body mass index calculator. While BMI is not the sole determinant of
-                        healthy weight, it offers a valuable starting point to evaluate your
-                        overall health and well-being.
-                    </p>
+                    
+                    <div className='mx-4 md:mx-0'>
+                        <p className='mt-6 text-center text-gray-600 md:text-left lg:mt-0'>
+                            <span className='font-semibold'>Better understand your weight in relation to your height</span> using our
+                            body mass index calculator.
+                        </p>
+                        <p className='mt-2 mb-8 text-center text-gray-600 md:text-left lg:mt-0 lg:mb-0'>
+                            While BMI is not the sole determinant of healthy weight, <span className='font-semibold'>it offers a valuable starting point to evaluate your overall health and well-being.</span>
+                        </p>
+                    </div>
                 </div>
 
                 <Card className='max-w-prose'>
@@ -33,7 +89,10 @@ const Header = () => {
                     <CardContent>
                         <form
                             className='mb-6 space-y-4 '
-                            onSubmit={() => { }}
+                            onSubmit={e => {
+                                e.preventDefault()
+                                calculateBMI(measures.weight, measures.height)
+                            }}
                         >
                             {/* Metric & Label */}
                             <div className='flex flex-row gap-4 justify-self-center'>
@@ -46,8 +105,10 @@ const Header = () => {
                                         type='radio'
                                         id='metric'
                                         value='metric'
-                                        // checked={value === 'metric'}
-                                        onChange={() => { }}
+                                        checked={value === 'metric'}
+                                        onChange={event => {
+                                            setValue(event.target.value)
+                                        }}
                                     />
                                     Metric
                                 </label>
@@ -61,8 +122,10 @@ const Header = () => {
                                         type='radio'
                                         id='imperial'
                                         value='imperial'
-                                        // checked={value === 'imperial'}
-                                        onChange={() => { }}
+                                        checked={value === 'imperial'}
+                                        onChange={event => {
+                                            setValue(event.target.value)
+                                        }}
                                     />
                                     Imperial
                                 </label>
@@ -80,8 +143,15 @@ const Header = () => {
                                         placeholder='cm'
                                         className='px-4 py-2 text-lg font-semibold text-gray-900 border border-gray-300 rounded-md placeholder:text-right placeholder:text-blue-700/50 placeholder:font-semibold placeholder:-mr-2'
                                         id='height'
-                                        // value={measures.height !== undefined ? measures.height : ''}
-                                        onChange={() => { }}
+                                        value={measures.height !== undefined ? measures.height : ''}
+                                        onChange={event => {
+                                            const newHeight = Number(event.target.value)
+                                            setMeasures(measures => ({
+                                                ...measures,
+                                                height: newHeight
+                                            }))
+                                            calculateBMI(measures.weight, newHeight)
+                                        }}
                                     />
 
 
@@ -98,8 +168,15 @@ const Header = () => {
                                         className='px-4 py-2 text-lg font-semibold text-gray-900 border border-gray-300 rounded-md placeholder:text-right placeholder:text-blue-700/50 placeholder:font-semibold placeholder:-mr-2'
                                         id='height'
                                         name='weight'
-                                        // value={measures.weight !== undefined ? measures.weight : ''}
-                                        onChange={() => { }}
+                                        value={measures.weight !== undefined ? measures.weight : ''}
+                                        onChange={event => {
+                                            const newWeight = Number(event.target.value)
+                                            setMeasures(measures => ({
+                                                ...measures,
+                                                weight: newWeight
+                                            }))
+                                            calculateBMI(newWeight, measures.height)
+                                        }}
                                     />
                                 </label>
                             </div>
@@ -137,9 +214,9 @@ const Header = () => {
                                                             : 'obese'}
                                             </span>
                                             . Your ideal weight is between{' '}
-                                            {/* {calculateIdealWeightRange(measures.height).join(
+                                            {calculateIdealWeightRange(measures.height).join(
                                                 'kg and '
-                                            )} */}
+                                            )}
                                             kg
                                         </p>
                                     </div>

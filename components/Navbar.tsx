@@ -4,7 +4,7 @@ const Navbar = () => {
     return ( 
       <div>
             {/* Navbar Logo */}
-            <div className='mx-auto my-14 md:mx-0'>
+            <div className='mx-auto my-14 md:mx-12 lg:mx-0'>
                 <Image
                     className='mx-auto mb-6 md:mx-0'
                     src='/images/shapeShiftIcon.png'
