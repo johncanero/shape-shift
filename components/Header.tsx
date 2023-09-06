@@ -14,11 +14,10 @@ const INITIAL_STATE: Measures = {
     weight: undefined
 }
 
-const Header = () => {
+export default function Home(): React.ReactNode {
     const [value, setValue] = React.useState('metric')
     const [measures, setMeasures] = React.useState<Measures>(INITIAL_STATE)
     const [bmi, setBMI] = React.useState<number | undefined>(undefined)
-
     // calculateBMI
     const calculateBMI = (weight?: number, height?: number) => {
         if (!height || !weight) {
@@ -230,4 +229,3 @@ const Header = () => {
     );
 }
 
-export default Header;
