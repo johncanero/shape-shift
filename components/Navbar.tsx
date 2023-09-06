@@ -19,11 +19,9 @@ const Navbar = () => {
                 </div>
 
                 <div className="hidden mt-3 md:block">
-                    <h2 className="font-medium text-neutral-800">BMI Calculator</h2>
+                    <h2 className="font-semibold text-neutral-800">BMI Calculator</h2>
                 </div>
             </div>
-
-
         </div>
     );
 }

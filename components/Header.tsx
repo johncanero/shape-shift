@@ -183,7 +183,7 @@ const Header = () => {
                         </form>
 
                         {/* Welcome - Enter your Height and Weight */}
-                        <div className='p-6 text-white bg-gradient-to-r from-blue-600 to-blue-400 md:rounded-r-[100px] rounded-r-xl rounded-l-xl'>
+                        <div className='p-6 text-white bg-gradient-to-r from-teal-600 to-teal-400 md:rounded-r-[100px] rounded-r-xl rounded-l-xl'>
                             {!bmi ? (
                                 <>
                                     <span className='flex mb-2 text-xl font-semibold'>
