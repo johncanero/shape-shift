@@ -1,9 +1,32 @@
 import Image from "next/image";
 
+import Health from "@/components/ui/healthy";
+
+const bodyText = [
+    {
+        title: 'Healthy eating',
+        description:
+            'Healthy eating promotes weight control, disease prevention, better digestion, immunity, mental clarity, and mood.',
+        src: './images/icon-eating.svg'
+    },
+    {
+        title: 'Regular exercise',
+        description:
+            'Exercise improve fitness, aids weight control, elevates mood, and reduces disease risk, fostering wellness and longevity.',
+        src: './images/icon-exercise.svg'
+    },
+    {
+        title: 'Adequate sleep',
+        description:
+            'Sleep enhances mental clarity, emotional stability, and physical wellness, promoting overall restoration and rejuvenation.',
+        src: './images/icon-sleep.svg'
+    }
+]
+
 const Main = () => {
     return ( 
         <div>
-            <div className='flex items-center gap-6 mb-10'>
+            <div className='md:flex items-center gap-6 mb-10'>
                 <Image
                     className='mx-auto mb-20'
                     src='/images/shapeShift/shapeShiftGroup.png'
@@ -26,6 +49,17 @@ const Main = () => {
                         daily for five days a week.
                     </p>
                 </div>
+            </div>
+
+            <div className='md:flex flex-col mb-20 md:flex-row'>
+                {bodyText.map(({ title, description, src }) => (
+                    <Health
+                        key={title}
+                        title={title}
+                        description={description}
+                        src={src}
+                    />
+                ))}
             </div>
         </div>
      );

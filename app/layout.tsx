@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   title: 'ShapeShift: Your BMI Companion',
   description: 'Your BMI Companion',
   icons: {
-    icon: '/images/shapeShiftIcon.png',
-    shortcut: '/images/shapeShiftIcon.png',
+    icon: '/images/shapeShift/shapeShiftIcon.png',
+    shortcut: '/images/shapeShift/shapeShiftIcon.png',
   },
 }
 
