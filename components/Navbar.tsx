@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link";
 
 const Navbar = () => {
     return (
@@ -18,8 +19,25 @@ const Navbar = () => {
                     </h1>
                 </div>
 
-                <div className="hidden mt-3 md:block">
-                    <h2 className="font-semibold text-neutral-800">BMI Calculator</h2>
+                {/* Navbar Links */}
+                <div className="flex gap-x-6">
+                    <Link
+                        href="/"
+                        prefetch={false}
+                    >
+                        <div className="hidden mt-3 md:block">
+                            <h2 className="font-semibold text-neutral-800">BMI Calculator</h2>
+                        </div>
+                    </Link>
+
+                    <Link
+                        href="/shape-healthy"
+                        prefetch={false}
+                    >
+                        <div className="hidden mt-3 md:block">
+                            <h2 className="font-semibold text-neutral-500">ShapeHealthy</h2>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>
