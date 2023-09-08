@@ -9,7 +9,7 @@ const Navbar = () => {
                 <div className='flex mx-auto md:mx-0'>
                     <Image
                         className='mx-auto mb-6 md:mx-0'
-                        src='/images/shapeShiftIcon.png'
+                        src='/images/shapeShift/shapeShiftIcon.png'
                         alt='shapeShiftIcon.png'
                         width={50}
                         height={50}
