@@ -3,7 +3,7 @@ import Link from "next/link";
 const Footer = () => {
     return (
         <div>
-            <footer className="hidden text-sm text-center text-gray-500 md:block md:py-6">
+            <footer className="hidden text-sm text-center text-gray-500 md:block mt-12">
                 <Link
                     target="_blank"
                     rel="noopener noreferrer"
