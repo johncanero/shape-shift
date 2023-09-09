@@ -26,7 +26,7 @@ const Navbar = () => {
                         prefetch={false}
                     >
                         <div className="hidden mt-3 md:block">
-                            <h2 className="font-semibold text-neutral-800">BMI Calculator</h2>
+                            <h2 className="font-semibold text-neutral-700 hover:text-neutral-900">BMI Calculator</h2>
                         </div>
                     </Link>
 
@@ -35,7 +35,7 @@ const Navbar = () => {
                         prefetch={false}
                     >
                         <div className="hidden mt-3 md:block">
-                            <h2 className="font-semibold text-neutral-500">ShapeHealthy</h2>
+                            <h2 className="font-semibold text-neutral-800 text-neutral-700 hover:text-neutral-900">ShapeHealthy</h2>
                         </div>
                     </Link>
                 </div>
