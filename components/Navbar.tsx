@@ -30,14 +30,14 @@ const Navbar = () => {
                         </div>
                     </Link>
 
-                    <Link
+                    {/* <Link
                         href="/shape-healthy"
                         prefetch={false}
                     >
                         <div className="hidden mt-3 md:block">
                             <h2 className="font-semibold text-neutral-800 text-neutral-700 hover:text-neutral-900">ShapeHealthy</h2>
                         </div>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </div>
