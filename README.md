@@ -17,47 +17,34 @@
 
 # ShapeShift
 
-This application allows users to view the current weather forecast for a specific location. The forecast includes information such as temperature, humidity, and precipitation.
+Welcome to ShapeShift, your go-to Body Mass Index (BMI) Calculator. This powerful tool empowers you to gain deeper insights into your weight relative to your height. While BMI isn't the only factor in determining a healthy weight, it provides an essential initial assessment for evaluating your overall health and well-being. Say hello to a more informed, healthier you with ShapeShift!
 
 </div>
-
-## Features
-
-- View current weather forecast for a specific location
-- Display temperature, humidity, and precipitation information
-- Responsive design for easy viewing on mobile devices
-
-## Built With
-
-- [Rapid API](https://rapidapi.com/wirefreethought/api/geodb-cities/) - GeoDB Cities API Documentation
-- [OpenWeather](https://openweathermap.org/) - Weather forecasts, nowcasts and history in a fast and elegant way
-
-
-
 ## Website
 
-🖥️ [https://weathercast-app-react-by-johncanero.vercel.app/]
+🖥️ [https://shape-shift.vercel.app/]
 
 ✍️ Project by John Cañero
 
 ## Responsive Design
 
 🪟: [Desktop - Tablet - Mobile]
-![WeatherCast Portfolio](./src/images/responsive/weatherCastPortfolio.jpg)
-![WeatherCast - Branding Portfolio](./src/images/responsive/weatherCast.jpg)
-![WeatherCast - Description Portfolio](./src/images/responsive/weatherCastInfo.jpg)
 
-![WeatherCast - Mockup Portfolio](./src/images/responsive/weatherCastIntroductoryPage.jpg)
-![WeatherCast - Mockup Portfolio](./src/images/responsive/weatherCastApiIntegration.jpg)
+![ShapeShift Portfolio](/public/images/responsive/shapeShiftMockup.jpg)
+![ShapeShift - Branding Portfolio](/public/images/responsive/shapeShift.jpg)
+![ShapeShift - Description Portfolio](/public/images/responsive/shapeShiftInfo.jpg)
 
-![WeatherCast - Mobile Portfolio](./src/images/responsive/weatherCastLanding.jpg)
-![WeatherCast - Mobile Portfolio](./src/images/responsive/weatherCastFunction.jpg)
-![WeatherCast - Mobile Portfolio](./src/images/responsive/weatherCastLandingAndFunction.jpg)
+![ShapeShift - Mockup Portfolio](/public/images/responsive/shapeShiftMockup1.jpg)
+![ShapeShift - Mockup Portfolio](/public/images/responsive/shapeShiftMockup2.jpg)
 
-![WeatherCast - Tablet Portfolio](./src/images/responsive/weatherCastTabletLanding.jpg)
-![WeatherCast - Tablet Portfolio](./src/images/responsive/weatherCastTabletFunction.jpg)
-![WeatherCast - Tablet Portfolio](./src/images/responsive/weatherCastTabletLandingAndFunction.jpg)
+![ShapeShift - Mobile Portfolio](/public/images/responsive/shapeShiftMobile.jpg)
+![ShapeShift - Mobile Portfolio](/public/images/responsive/shapeShiftMobile2.jpg)
+![ShapeShift - Mobile Portfolio](/public/images/responsive/shapeShiftMobileMockup.jpg)
 
-![WeatherCast - Desktop Portfolio](./src/images/responsive/weatherCastDesktopLanding.jpg)
-![WeatherCast - Desktop Portfolio](./src/images/responsive/weatherCastDesktopFunction.jpg)
-![WeatherCast - Desktop Portfolio](./src/images/responsive/weatherCastDesktopMockup.jpg)
+![ShapeShift - Tablet Portfolio](/public/images/responsive/shapeShiftTablet1.jpg)
+![ShapeShift - Tablet Portfolio](/public/images/responsive/shapeShiftTablet2.jpg)
+![ShapeShift - Tablet Portfolio](/public/images/responsive/shapeShiftTabletMokcup.jpg)
+
+![ShapeShift - Desktop Portfolio](/public/images/responsive/shapeShiftDesktop1.jpg)
+![ShapeShift - Desktop Portfolio](/public/images/responsive/shapeShiftDesktop2.jpg)
+![ShapeShift - Desktop Portfolio](/public/images/responsive/shapeShiftDesktopMockup.jpg)
