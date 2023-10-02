@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import { motion } from "framer-motion"
 import Health from "@/components/ui/healthy";
 import Box from "@/components/ui/boxes";
 
@@ -58,18 +58,27 @@ const boxesText = [
 ]
 
 const Main = () => {
-    return ( 
+    return (
         <div>
-            {/* shapeShiftGroup */}
-            <div className='md:flex items-center gap-6 mb-10'>
-                <Image
-                    className='mx-auto mb-20'
-                    src='/images/shapeShift/shapeShiftGroup.png'
-                    alt=''
-                    width={430}
-                    height={430}
-                />
+            <div className='items-center gap-6 mb-10 md:flex'>
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                        delay: 0.4,
+                        duration: 0.8,
+                    }}
+                >
+                    <Image
+                        className='mx-auto mb-20'
+                        src='/images/shapeShift/shapeShiftGroup.png'
+                        alt='ShapeShift'
+                        width={2000}
+                        height={2000}
+                    />
+                </motion.div>
                 {/* What your BMI result means */}
+
                 <div className='text-center'>
                     <h2 className='mb-4 text-3xl font-bold tracking-tighter text-center'>
                         What your BMI result means
@@ -87,7 +96,13 @@ const Main = () => {
             </div>
 
             {/* bodyText.map */}
-            <div className='md:flex flex-col mb-20 md:flex-row'>
+            <motion.div className='flex-col mb-20 md:flex md:flex-row'
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{
+                    duration: 0.3,
+                }}
+            >
                 {bodyText.map(({ title, description, src }) => (
                     <Health
                         key={title}
@@ -96,8 +111,8 @@ const Main = () => {
                         src={src}
                     />
                 ))}
-            </div>
-            
+            </motion.div>
+
             {/* boxesText.map */}
             <div className='mb-20'>
                 <h2 className='mb-6 text-3xl font-bold tracking-tighter text-center'>
@@ -110,7 +125,13 @@ const Main = () => {
                 consider their BMI outcomes, and in certain cases, the measurement
                 may not be beneficial to use.
             </p>
-            <div className='flex flex-wrap justify-center gap-4 mb-10 '>
+            <motion.div className='flex flex-wrap justify-center gap-4 mb-10'
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{
+                    duration: 0.3,
+                }}
+            >
                 {boxesText.map(({ title, description, src }) => (
                     <Box
                         key={title}
@@ -119,9 +140,9 @@ const Main = () => {
                         src={src}
                     />
                 ))}
-            </div>
+            </motion.div>
         </div>
-     );
+    );
 }
- 
+
 export default Main;

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link";
+import { motion } from "framer-motion"
 
 const Navbar = () => {
     return (
@@ -20,7 +21,14 @@ const Navbar = () => {
                 </div>
 
                 {/* Navbar Links */}
-                <div className="flex gap-x-6">
+                <motion.div className="flex gap-x-6"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                        delay: 0.1,
+                        duration: 0.4,
+                    }}
+                >
                     <Link
                         href="/"
                         prefetch={false}
@@ -38,7 +46,7 @@ const Navbar = () => {
                             <h2 className="font-semibold text-neutral-800 text-neutral-700 hover:text-neutral-900">ShapeHealthy</h2>
                         </div>
                     </Link> */}
-                </div>
+                </motion.div>
             </div>
         </div>
     );
