@@ -68,7 +68,7 @@ const Main = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{
                         delay: 0.4,
-                        duration: 0.8,
+                        duration: 0.6,
                     }}
                 >
                     <Image
